@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Playground</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🧪 Prompt Playground</h2>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Model</h3>
+                <div class="model-selector">
+                    <button class="model-btn active" data-model="balanced">Balanced</button>
+                    <button class="model-btn" data-model="creative">Creative</button>
+                    <button class="model-btn" data-model="precise">Precise</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Saved Prompts</h3>
+                <div id="savedPrompts" class="saved-list">
+                    <p class="empty-state">No saved prompts yet</p>
+                </div>
+                <button id="savePromptBtn" class="btn-secondary">Save Current</button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Variables</h3>
+                <div id="variablesForm" class="variables-form">
+                    <p class="empty-state">Use {{variable}} in prompts</p>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>History</h3>
+                <div id="history" class="history-list">
+                    <p class="empty-state">No history yet</p>
+                </div>
+                <button id="clearHistoryBtn" class="btn-text">Clear History</button>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="exportBtn" class="btn-secondary">Export as JSON</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="editor-section">
+                <div class="editor-header">
+                    <h3>Prompt Editor</h3>
+                    <div class="editor-actions">
+                        <button id="clearBtn" class="btn-text">Clear</button>
+                        <button id="compareBtn" class="btn-secondary">Compare</button>
+                    </div>
+                </div>
+                <textarea id="promptEditor" placeholder="Enter your prompt here...&#10;&#10;Use {{variable}} for template variables.&#10;&#10;Try keywords like: code, explain, write, function, algorithm..."></textarea>
+                <div class="editor-footer">
+                    <span id="charCount">0 chars</span>
+                    <span id="wordCount">0 words</span>
+                    <button id="runBtn" class="btn-primary">▶ Run</button>
+                </div>
+            </div>
+
+            <div id="comparisonSection" class="comparison-section hidden">
+                <div class="comparison-header">
+                    <h3>Side-by-Side Comparison</h3>
+                    <button id="closeCompareBtn" class="btn-text">Close</button>
+                </div>
+                <div class="comparison-grid">
+                    <div class="comparison-pane">
+                        <textarea id="promptA" placeholder="Prompt A..."></textarea>
+                        <div id="responseA" class="response-area">Response will appear here...</div>
+                    </div>
+                    <div class="comparison-pane">
+                        <textarea id="promptB" placeholder="Prompt B..."></textarea>
+                        <div id="responseB" class="response-area">Response will appear here...</div>
+                    </div>
+                </div>
+                <button id="runCompareBtn" class="btn-primary">Run Comparison</button>
+            </div>
+
+            <div class="response-section">
+                <div class="response-header">
+                    <h3>Response</h3>
+                    <div id="metrics" class="metrics hidden">
+                        <span class="metric"><span id="inputTokens">0</span> input tokens</span>
+                        <span class="metric"><span id="outputTokens">0</span> output tokens</span>
+                        <span class="metric"><span id="latency">0</span>ms</span>
+                    </div>
+                </div>
+                <div id="responseOutput" class="response-output">
+                    <p class="placeholder">Run a prompt to see the response</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

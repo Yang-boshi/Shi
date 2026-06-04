@@ -1,0 +1,2 @@
+[console_scripts]
+seo-check = seo_checker.main:main

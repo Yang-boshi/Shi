@@ -1,0 +1,140 @@
+port: 3002
+base: /api/v1
+delay: 50
+
+endpoints:
+  # Users list with pagination
+  - path: /users
+    method: GET
+    count: 25
+    fields:
+      id: increment
+      firstName: firstName
+      lastName: lastName
+      email: email
+      username: username
+      avatar: avatar
+      phone: phone
+      jobTitle: title
+      company: company
+      isActive: boolean
+      rating: rating
+      createdAt: pastdate
+      updatedAt: date
+
+  # Single user profile
+  - path: /users/:id
+    method: GET
+    fields:
+      id: param
+      firstName: firstName
+      lastName: lastName
+      email: email
+      username: username
+      avatar: avatar
+      phone: phone
+      address: address
+      city: city
+      state: state
+      country: country
+      zipcode: zipcode
+      latitude: latitude
+      longitude: longitude
+      jobTitle: title
+      company: company
+      bio: bio
+      website: url
+      ip: ip
+      isActive: boolean
+      rating: rating
+      createdAt: pastdate
+      updatedAt: date
+
+  # Create user
+  - path: /users
+    method: POST
+    fields:
+      id: increment
+      firstName: firstName
+      lastName: lastName
+      email: email
+      username: username
+      createdAt: datetime
+
+  # Update user
+  - path: /users/:id
+    method: PUT
+    fields:
+      id: param
+      firstName: firstName
+      lastName: lastName
+      email: email
+      updatedAt: datetime
+
+  # Patch user
+  - path: /users/:id
+    method: PATCH
+    fields:
+      id: param
+      updatedAt: datetime
+
+  # Delete user
+  - path: /users/:id
+    method: DELETE
+
+  # User posts
+  - path: /users/:id/posts
+    method: GET
+    count: 5
+    fields:
+      id: increment
+      userId: param
+      title: title
+      slug: slug
+      excerpt: sentence
+      body: paragraphs
+      published: boolean
+      views: number
+      likes: number
+      createdAt: pastdate
+
+  # User settings
+  - path: /users/:id/settings
+    method: GET
+    static:
+      theme: light
+      language: en
+      notifications: true
+      newsletter: false
+      timezone: America/New_York
+
+  # Search users
+  - path: /users/search
+    method: GET
+    count: 10
+    fields:
+      id: increment
+      firstName: firstName
+      lastName: lastName
+      email: email
+      avatar: avatar
+      relevance: rating
+
+  # User statistics
+  - path: /users/:id/stats
+    method: GET
+    static:
+      totalPosts: 42
+      totalComments: 156
+      totalLikes: 892
+      accountAge: 365
+      lastActive: 2024-01-15
+
+  # API status
+  - path: /status
+    method: GET
+    static:
+      status: operational
+      version: 1.0.0
+      environment: development
+      uptime: 99.9%

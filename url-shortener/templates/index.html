@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔗 URL Shortener</h1>
+            <p>Shorten URLs and track clicks with analytics</p>
+        </header>
+
+        <main>
+            <section class="shorten-form">
+                <form id="shortenForm">
+                    <div class="input-group">
+                        <input type="url" id="urlInput" placeholder="Enter your URL here..." required>
+                        <button type="submit">Shorten</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="slugInput" placeholder="Custom slug (optional)">
+                    </div>
+                </form>
+            </section>
+
+            <section id="result" class="result hidden">
+                <h2>Your Shortened URL</h2>
+                <div class="result-content">
+                    <div class="url-display">
+                        <a id="shortUrl" href="#" target="_blank"></a>
+                        <button id="copyBtn" onclick="copyUrl()">Copy</button>
+                    </div>
+                    <div class="qr-container">
+                        <img id="qrCode" src="" alt="QR Code">
+                    </div>
+                </div>
+                <div class="result-meta">
+                    <p>Original: <span id="originalUrl"></span></p>
+                    <a id="statsLink" href="#" class="btn-stats">View Analytics →</a>
+                </div>
+            </section>
+
+            <section class="features">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Custom Slugs</h3>
+                        <p>Create memorable short links with custom slugs</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Click Analytics</h3>
+                        <p>Track clicks, referrers, browsers, and more</p>
+                    </div>
+                    <div class="feature">
+                        <h3>QR Codes</h3>
+                        <p>Generate QR codes for easy sharing</p>
+                    </div>
+                    <div class="feature">
+                        <h3>REST API</h3>
+                        <p>Programmatic access via API endpoints</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+port: 3001
+base: /api
+delay: 100
+
+endpoints:
+  # List all users
+  - path: /users
+    method: GET
+    count: 10
+    fields:
+      id: increment
+      name: name
+      email: email
+      avatar: avatar
+      phone: phone
+      city: city
+      country: country
+      createdAt: pastdate
+
+  # Get single user
+  - path: /users/:id
+    method: GET
+    fields:
+      id: param
+      name: name
+      email: email
+      avatar: avatar
+      phone: phone
+      address: address
+      city: city
+      state: state
+      country: country
+      zipcode: zipcode
+      company: company
+      jobtitle: title
+      bio: bio
+      createdAt: pastdate
+
+  # Create user
+  - path: /users
+    method: POST
+    fields:
+      id: increment
+      name: name
+      email: email
+      avatar: avatar
+      createdAt: datetime
+
+  # Update user
+  - path: /users/:id
+    method: PUT
+    fields:
+      id: param
+      name: name
+      email: email
+      updatedAt: datetime
+
+  # Delete user
+  - path: /users/:id
+    method: DELETE
+
+  # List all posts
+  - path: /posts
+    method: GET
+    count: 20
+    fields:
+      id: increment
+      title: title
+      body: paragraph
+      author: name
+      category: word
+      published: boolean
+      createdAt: pastdate
+
+  # Get single post
+  - path: /posts/:id
+    method: GET
+    fields:
+      id: param
+      title: title
+      body: paragraphs
+      author: name
+      category: word
+      published: boolean
+      createdAt: pastdate
+
+  # Create post
+  - path: /posts
+    method: POST
+    fields:
+      id: increment
+      title: title
+      body: paragraph
+      author: name
+      createdAt: datetime
+
+  # List comments
+  - path: /comments
+    method: GET
+    count: 30
+    fields:
+      id: increment
+      postId: number
+      name: name
+      email: email
+      body: sentence
+      createdAt: pastdate
+
+  # Health check
+  - path: /health
+    method: GET
+    static:
+      status: ok
+      version: 1.0.0
+      uptime: running

@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: seo-checker
+Version: 1.0.0
+Summary: A CLI tool to audit web pages for SEO issues
+Author: SEO Checker Team
+Requires-Python: >=3.8

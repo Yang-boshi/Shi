@@ -1,0 +1,30 @@
+{
+  "name": "api-mock-server",
+  "version": "1.0.0",
+  "description": "Generate a mock REST API server from YAML/JSON config",
+  "main": "src/index.js",
+  "bin": {
+    "mock-server": "./bin/mock-server.js"
+  },
+  "scripts": {
+    "start": "node bin/mock-server.js",
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "api",
+    "mock",
+    "server",
+    "rest",
+    "yaml",
+    "faker"
+  ],
+  "author": "API Mock Server Team",
+  "license": "MIT",
+  "dependencies": {
+    "@faker-js/faker": "^8.0.0",
+    "commander": "^11.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "js-yaml": "^4.1.0"
+  }
+}

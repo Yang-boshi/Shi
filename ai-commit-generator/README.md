@@ -1,0 +1,58 @@
+# AI Commit Message Generator
+
+[![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)]()
+
+A CLI tool that analyzes your git diff and generates clear, conventional commit messages automatically.
+
+## Features
+
+- Reads staged or unstaged git diff
+- Generates conventional commit messages (feat:, fix:, docs:, refactor:, etc.)
+- Rule-based analysis - no API keys needed
+- Colorized CLI output
+- Supports multiple commit types
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+```bash
+# Generate commit message for staged changes
+ai-commit
+
+# Or run as module
+python -m commit_generator
+```
+
+## How It Works
+
+The tool analyzes your git diff to determine:
+1. Type of change (feature, fix, docs, refactor, etc.)
+2. Scope of changes (affected files/modules)
+3. A descriptive commit message
+
+Based on file patterns and diff content, it applies conventional commit format rules.
+
+## Commit Types
+
+| Type | Description |
+|------|-------------|
+| `feat` | New feature |
+| `fix` | Bug fix |
+| `docs` | Documentation |
+| `style` | Formatting, missing semicolons, etc. |
+| `refactor` | Code restructuring |
+| `perf` | Performance improvement |
+| `test` | Adding/fixing tests |
+| `chore` | Maintenance tasks |
+| `ci` | CI/CD changes |
+
+## License
+
+MIT

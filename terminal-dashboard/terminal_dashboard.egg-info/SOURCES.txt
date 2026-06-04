@@ -1,0 +1,13 @@
+README.md
+setup.py
+sysmon/__init__.py
+sysmon/__main__.py
+sysmon/collectors.py
+sysmon/dashboard.py
+sysmon/main.py
+terminal_dashboard.egg-info/PKG-INFO
+terminal_dashboard.egg-info/SOURCES.txt
+terminal_dashboard.egg-info/dependency_links.txt
+terminal_dashboard.egg-info/entry_points.txt
+terminal_dashboard.egg-info/requires.txt
+terminal_dashboard.egg-info/top_level.txt
